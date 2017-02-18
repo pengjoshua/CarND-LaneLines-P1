@@ -56,13 +56,15 @@ One potential shortcoming would be what would happen with differently sized imag
 
 My pipeline would also have problems with different image vantage points and perspectives. Video streams from taken from cameras installed at even slightly different angles and viewpoints of the road would likely create problems for my draw_lines algorithm. 
 
-My pipeline would likely have problems with double dashed or solid line markers on the left or right. These additional lines would be factored into the line average.
+My pipeline would likely have problems with double (or any multiple), very thick, or no markers on the left or right. Additional lines would be factored into the line average. My algorithm keeps a cache of the last line, but if there are no lines on the left or right at the beginning of the video stream, there would likely be an error.
 
 My pipeline would have problems with additional road markings inside the current lane such as diamond marking for HOV lanes, right or left turn markings, or any letters as any additional artifacts with strong edges would be considered a line segment.
 
 Similarly, my pipeline would also temporarily have problems if the car ever changed lanes as line segments would shift from being classified as left to right lines and vice versa. I can only imagine what would happen in adverse weather conditions with rain and snow!
 
 ###3. Possible improvements to my pipeline
+
+Instead of computing the average line, I could also connect the line segments with extrapolation which may work better for slightly curved lines during turns.
 
 A possible improvement would be to base my trapezoid region of interest based on percentages of the image height and width instead of pixel values.
 
