@@ -4,7 +4,6 @@
 * Make a pipeline that finds lane lines on the road on a series of images
 * Apply the pipeline to video streams
 
-
 [//]: # (Image References)
 
 [image1]: ./output_images/solidWhiteCurve.jpg "solidWhiteCurve"
