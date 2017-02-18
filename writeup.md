@@ -43,12 +43,12 @@ I use the HoughLinesP in OpenCV to apply the Hough transform on the image which 
 
 With all the line segments, I categorize the lines as being a part of the left line or right line based on the slope. Positively sloped lines are left lines and negatively sloped lines are right lines. I calculate the average slope and average y-intercept of all left lines and right lines, respectively. For calculating the average, I only take the last x left line segments and last x right line segments. In this way, the algorithm should be more robust to sudden curves. Then, I compute a single average left line to represent the collection of all left lines extending from the bottom of the image to the middle of the image. This process is repeated to compute a single average right line. Finally, I overlay these lines on top of the road image.
 
-![alt text][image1]
-![alt text][image2]
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
-![alt text][image6]
+![alt text][image1]{:width="400px"}
+![alt text][image2]{:width="400px"}
+![alt text][image3]{:width="400px"}
+![alt text][image4]{:width="400px"}
+![alt text][image5]{:width="400px"}
+![alt text][image6]{:width="400px"}
 
 ###2. Identify potential shortcomings with your current pipeline
 
